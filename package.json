@@ -24,7 +24,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/PeculiarVentures/node-webcrypto-p11.git"
+		"url": "git+https://github.com/erdembas/node-webcrypto-p11.git"
 	},
 	"dependencies": {
 		"graphene-pk11": "latest",
@@ -43,9 +43,9 @@
 	"author": "",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/PeculiarVentures/node-webcrypto-p11/issues"
+		"url": "https://github.com/erdembas/node-webcrypto-p11/issues"
 	},
-	"homepage": "https://github.com/PeculiarVentures/node-webcrypto-p11#readme",
+	"homepage": "https://github.com/erdembas/node-webcrypto-p11#readme",
 	"devDependencies": {
 		"live-server": "^1",
 		"mocha": "^3",
