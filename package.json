@@ -27,7 +27,7 @@
 		"url": "git+https://github.com/erdembas/node-webcrypto-p11.git"
 	},
 	"dependencies": {
-		"graphene-pk11": "erdembas/graphene-pk11",
+		"graphene-pk11": "erdembas/graphene",
 		"base64url": "latest"
 	},
 	"keywords": [

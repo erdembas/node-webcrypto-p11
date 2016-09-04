@@ -24,6 +24,25 @@ var KeyStorage = (function () {
             console.log("WebCrypto:PKCS11: " + keys.length + " keys matches ID '" + id + "'");
         return keys.items(0);
     };
+    KeyStorage.prototype.getItemByClassName = function (cls) {
+        var keys = this.session.find({ class: cls });
+        if (!keys.length) {
+            return null;
+        }
+        if (keys.length > 1)
+            console.log("WebCrypto:PKCS11: " + keys.length + " keys matches ID '" + cls + "'");
+        return keys.items(0);
+    };
+    KeyStorage.prototype.getItemByClass = function (cls) {
+        var sobj = this.getItemByClassName(cls);
+        if (sobj) {
+            var _key = sobj.toType();
+            var alg = JSON.parse(_key.label);
+            return new key_1.CryptoKey(_key, alg);
+        }
+        else
+            return null;
+    };
     KeyStorage.prototype.getItem = function (key) {
         var sobj = this.getItemById(key);
         if (sobj) {
