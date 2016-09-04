@@ -28,6 +28,29 @@ export class KeyStorage implements NodeKeyStorage {
         return keys.items(0);
     }
 
+
+    protected getItemByClassName(cls: any): SessionObject {
+        let keys = this.session.find({ class: cls });
+        if (!keys.length) {
+            // console.log(`WebCrypto:PKCS11: Key by ID '${id}' is not found`);
+            return null;
+        }
+        if (keys.length > 1)
+            console.log(`WebCrypto:PKCS11: ${keys.length} keys matches ID '${cls}'`);
+        return keys.items(0);
+    }
+
+    getItemByClass(cls: any): CryptoKey {
+        let sobj = this.getItemByClassName(cls);
+        if (sobj) {
+            let _key = sobj.toType<Key>();
+            let alg = JSON.parse(_key.label);
+            return new CryptoKey(_key, alg);
+        }
+        else
+            return null;
+    }
+
     getItem(key: string): CryptoKey {
         let sobj = this.getItemById(key);
         if (sobj) {
