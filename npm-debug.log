@@ -51,10 +51,7 @@
 30 warn addRemoteGit     at emitTwo (events.js:87:13)
 30 warn addRemoteGit     at ChildProcess.emit (events.js:172:7)
 30 warn addRemoteGit     at maybeClose (internal/child_process.js:827:16)
-30 warn addRemoteGit     at Socket.<anonymous> (internal/child_process.js:319:11)
-30 warn addRemoteGit     at emitOne (events.js:77:13)
-30 warn addRemoteGit     at Socket.emit (events.js:169:7)
-30 warn addRemoteGit     at Pipe._onclose (net.js:486:12)
+30 warn addRemoteGit     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 30 warn addRemoteGit  erdembas/graphene-pk11 resetting remote C:\Users\erdem\AppData\Roaming\npm-cache\_git-remotes\git-github-com-erdembas-graphene-pk11-git-127b62ba because of error: { [Error: Command failed: git -c core.longpaths=true config --get remote.origin.url
 30 warn addRemoteGit ]
 30 warn addRemoteGit   killed: false,
