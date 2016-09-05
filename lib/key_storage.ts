@@ -40,11 +40,10 @@ export class KeyStorage implements NodeKeyStorage {
         return keys.items(0);
     }
 
-    getItemByClass(cls: any): CryptoKey {
+    getItemByClass(cls: any, alg: any): CryptoKey {
         let sobj = this.getItemByClassName(cls);
         if (sobj) {
             let _key = sobj.toType<Key>();
-            let alg = JSON.parse(_key.label);
             return new CryptoKey(_key, alg);
         }
         else
