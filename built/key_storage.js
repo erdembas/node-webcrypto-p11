@@ -33,11 +33,10 @@ var KeyStorage = (function () {
             console.log("WebCrypto:PKCS11: " + keys.length + " keys matches ID '" + cls + "'");
         return keys.items(0);
     };
-    KeyStorage.prototype.getItemByClass = function (cls) {
+    KeyStorage.prototype.getItemByClass = function (cls, alg) {
         var sobj = this.getItemByClassName(cls);
         if (sobj) {
             var _key = sobj.toType();
-            var alg = JSON.parse(_key.label);
             return new key_1.CryptoKey(_key, alg);
         }
         else
