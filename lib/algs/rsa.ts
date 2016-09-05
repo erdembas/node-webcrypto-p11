@@ -275,7 +275,8 @@ export class RsaPKCS1 extends Rsa {
         let res: string = null;
         switch ((<IAlgorithmHashed>key.algorithm).hash.name.toUpperCase()) {
             case "SHA-1":
-                res = "SHA1_RSA_PKCS";
+                //müdahale ettiğim önemli bir nokta!
+                res = "RSA_PKCS";
                 break;
             case "SHA-224":
                 res = "SHA224_RSA_PKCS";

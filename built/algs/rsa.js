@@ -228,7 +228,7 @@ var RsaPKCS1 = (function (_super) {
         var res = null;
         switch (key.algorithm.hash.name.toUpperCase()) {
             case "SHA-1":
-                res = "SHA1_RSA_PKCS";
+                res = "RSA_PKCS";
                 break;
             case "SHA-224":
                 res = "SHA224_RSA_PKCS";
